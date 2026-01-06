@@ -7,20 +7,77 @@
     <style>
         body {
             text-align: center;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.1em;
+            margin: 20px 0;
+            color: #555;
         }
         img {
             width: 20vw;
             height: auto;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .links {
-            margin-top: 20px;
+            margin: 30px 0;
+            font-size: 1.2em;
+        }
+        .links a {
+            color: #3498db;
+            text-decoration: none;
+            padding: 0 10px;
+            transition: color 0.3s;
+        }
+        .links a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            text-align: left;
+            margin: 20px auto;
+            font-size: 0.9em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .citation {
-            margin-top: 20px;
-            font-family: monospace;
+            margin-top: 40px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
             text-align: left;
             display: inline-block;
+            background-color: #fff;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 0.95em;
+        }
+        .citation b {
+            color: #2c3e50;
         }
         
     </style>
@@ -31,10 +88,19 @@
     <img src="frontpagedataengine.jpg" alt="Image from the paper showing the online data collection while executing the task.">
     <p>Good Grasps Only: A data engine for self-supervised fine-tuning of pose estimation using grasp poses for verification</p>
     <div class="links">
-        <a href="https://github.com/fhagelskjaer/gogoengine">Code</a> | 
         <a href="https://arxiv.org/abs/2409.11512">Paper</a> |
         <a href="https://huggingface.co/frhag/keymatchnet">Model</a> 
     </div>
+
+    <p>This site is a collection of links related to the project GOGO engine.</p>
+
+    <p>The GOGO engine uses keymatchnet for the pose estimation. You can find the repostisory for keymatchnet at <a href="https://github.com/fhagelskjaer/keymatchnet">https://github.com/fhagelskjaer/keymatchnet</a>.</p>
+
+    <p>With keymatchnet installed, you can run keymatchnet with the trained weights from GOGO engine the following way:</p>
+
+    <pre>keymatchnet --model_root "frhag/keymatchnet_gogo_engine" --obj testdata/09_BGPSL6-9-L30-F7.stl --scene testdata/point_cloud.pcd --visu True</pre>
+
+    <p>The code for running the in bin pose estimation and grasp estimation is available at <a href="https://github.com/fhagelskjaer/sdui40binpick">https://github.com/fhagelskjaer/sdui40binpick</a>.</p>
 
     <div class="citation">
         <b> To cite:</b> <br>
